@@ -1,17 +1,15 @@
 /* Centering the button container */
 .button-container {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
   height: 100vh; /* Full viewport height */
 }
 
 /* Styles for the modal button */
 .modal-button {
   width: 80%; /* Takes up 80% of the screen width */
-  background-color: white;
+  background-color: rgb(109, 106, 106);
   padding: 0.5rem 1rem; /* Adjust padding for different screen sizes */
-  border-radius: 9999px; /* Rounded full */
+  border-radius: 9px; /* Rounded full */
   font-size: 1rem; /* Adjust font size */
   font-weight: 600;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -19,7 +17,7 @@
 }
 
 .modal-button:hover {
-  background-color: #cbd5e0; /* Gray-400 */
+  background-color: #c9d0d7; /* Gray-400 */
 }
 
 @media (min-width: 768px) {
