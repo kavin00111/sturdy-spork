@@ -1,8 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react';
+import './privacypolicy.css';
 
-const privacypolicy = () => {
+// Main PrivacyPolicy component
+const PrivacyPolicy = () => {
+    // State to control modal visibility
+    const [isOpen, setIsOpen] = useState(false);
 
-    const Content = () => {
+    // Function to open the modal
+    const openModal = () => {
+        setIsOpen(true);
+    };
+
+    // Function to close the modal
+    const closeModal = () => {
+        setIsOpen(false);
+    };
+
+    // Function to handle clicks outside the modal content
+    const handleClickOutside = (e) => {
+        if (e.target.classList.contains('modal-overlay')) {
+            closeModal();
+        }
+    };
+    const Contentprivacypolicy = () => {
         return (
             <div>
                 <h1>Privacy Policy</h1>
@@ -198,12 +218,34 @@ const privacypolicy = () => {
             </div>
         )
     }
+ // Content component containing the privacy policy text
+//  const Content = () => {
+//     return (
+//         <div className="modal-content">
+//             {/* Privacy Policy content goes here */}
+//             <h1>Privacy Policy</h1>
+//             <p>Last updated: September 09, 2024</p>
+//             {/* ... (rest of the privacy policy content) ... */}
+//         </div>
+//     );
+// };
 
-    return (
-        <div>
-            
-        </div>
-    )
-}
+// Render the component
+return (
+    <div className='privacy-policy-container'>
+        <a href="#" onClick={openModal}>Privacy Policy</a>
+        {isOpen && (
+            <div className="modal-overlay" onClick={handleClickOutside}>
+                <div className="modal">
+                    <div className="modal-content">
+                        <Contentprivacypolicy />
+                    </div>
+                    <button onClick={closeModal}>Close</button>
+                </div>
+            </div>
+        )}
+    </div>
+);
+};
 
-export default privacypolicy
+export default PrivacyPolicy;
